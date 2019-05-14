@@ -66,28 +66,35 @@ namespace Task1_2
                     if (circle2.Radius <= (square2.Side / 2))
                     {
                         Console.WriteLine("Yep");
-                    }
-                    else
+						Console.Read();
+
+					}
+					else
                     {
                         Console.WriteLine("Nope");
-                    }
-                }
+						Console.Read();
+
+					}
+				}
                 else if (enterCondition == 2)
                 {
-					if (circle2.Radius <= (square2.Side / Math.Sqrt(2)))
+					if (circle2.Radius >= (square2.Side / Math.Sqrt(2)))
                     {
                         Console.WriteLine("Yep");
-                    }
-                    else
+						Console.Read();
+
+					}
+					else
                     {
                         Console.WriteLine("Nope");
-                    }
-                }
+						Console.Read();
+
+					}
+				}
                 else
                 {
                     Console.WriteLine("Have a nice day!)");
                     Console.Read();
-                    return;
                 }
 
 

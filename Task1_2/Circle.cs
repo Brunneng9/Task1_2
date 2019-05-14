@@ -9,7 +9,7 @@ namespace Task1_2
 		public double Radius
 		{ get	{ return _radius; }
 		  set	{
-		  if (value > 0)
+		  if (value > 0 && value < double.MaxValue)
 		  {
 					_radius = value;
 		  }

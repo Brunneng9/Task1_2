@@ -8,7 +8,7 @@ namespace Task1_2
 		public double Side { get { return _side; }
 		set
 		{
-		if(value > 0)
+		if (value > 0)
 		{
 					_side = value;
 		}
