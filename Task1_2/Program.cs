@@ -13,14 +13,11 @@ namespace Task1_2
 
         static void Main(string[] args)
         {
-            double side;
-            double radius;
             
-
             Console.WriteLine("1 - Calculate Circle area");
             Console.WriteLine("2 - Calculate Square area");
             Console.WriteLine("3 - Calculate Circle and Square area <- (Second Task is here)");
-            int condition = EnterIntValue();
+            int condition = EnterIntegerValueFromConsole();
 
 
 
@@ -28,18 +25,18 @@ namespace Task1_2
             if (condition == 1)
             {
                 Console.WriteLine("Please enter a circle radius: ");
-                radius = EnterDoubleValue();
-
-                Console.WriteLine("Circle area is " + MathHelper.CircleArea(radius));
-                Console.Read();
+                // radius = EnterDoubleValue();
+				Circle circle1 = new Circle(EnterDoubleValue());
+                Console.WriteLine("Circle area is " + circle1.GetCircleArea());
+				Console.Read();
 
             }
             else if (condition == 2)
             {
                 Console.WriteLine("Please enter a square side: ");
-                side = EnterDoubleValue();
-
-                Console.WriteLine("Square area is " + MathHelper.SquareArea(side));
+                // side = EnterDoubleValue();
+				Square square1 = new Square(EnterDoubleValue());
+                Console.WriteLine("Square area is " + square1.GetSquareArea());
                 Console.Read();
 
             }
@@ -47,25 +44,26 @@ namespace Task1_2
             {
 
                 Console.WriteLine("Please enter a circle radius: ");
-                radius = EnterDoubleValue();
-
+                // radius = EnterDoubleValue();
+				Circle circle2 = new Circle(EnterDoubleValue());
                 Console.WriteLine("Please enter a square side: ");
-                side = EnterDoubleValue();
+				// side = EnterDoubleValue();
+				Square square2 = new Square(EnterDoubleValue());
 
 
-                Console.WriteLine("Circle area is " + MathHelper.CircleArea(radius));
-                Console.WriteLine("Square area is " + MathHelper.SquareArea(side));
+                Console.WriteLine("Circle area is " + circle2.GetCircleArea());
+                Console.WriteLine("Square area is " + square2.GetSquareArea());
                 Console.WriteLine();
 
                 Console.WriteLine("Do you fancy to know if it's possible to fit ");
                 Console.WriteLine("1 - Circle into Square");
                 Console.WriteLine("2 - Square into Circle");
                 Console.WriteLine("All other digits - Exit");
-                int enterCondition = EnterIntValue();
+                int enterCondition = EnterIntegerValueFromConsole();
 
                 if (enterCondition == 1)
                 {
-                    if (radius <= (side / 2))
+                    if (circle2.Radius <= (square2.Side / 2))
                     {
                         Console.WriteLine("Yep");
                     }
@@ -76,7 +74,7 @@ namespace Task1_2
                 }
                 else if (enterCondition == 2)
                 {
-                    if (radius <= (Math.Sqrt(2 * MathHelper.SquareArea(side)) / 2))
+					if (circle2.Radius <= (square2.Side / Math.Sqrt(2)))
                     {
                         Console.WriteLine("Yep");
                     }
@@ -101,7 +99,7 @@ namespace Task1_2
                 Console.Read();
             }
         }
-        private static int EnterIntValue()
+        private static int EnterIntegerValueFromConsole()
         {
             int value;
             while (true)
@@ -122,7 +120,7 @@ namespace Task1_2
             double value;
             while (true)
             {
-                if (double.TryParse(Console.ReadLine(), out value))
+                if (double.TryParse(Console.ReadLine(), out value) && value > 0)
                 {
                     break;
                 }
