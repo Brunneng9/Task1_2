@@ -34,7 +34,7 @@ namespace Task1_2
             else if (condition == 2)
             {
                 Console.WriteLine("Please enter a square side: ");
-                // side = EnterDoubleValue();
+                
 				Square square1 = new Square(EnterDoubleValue());
                 Console.WriteLine("Square area is " + square1.GetSquareArea());
                 Console.Read();
@@ -44,10 +44,10 @@ namespace Task1_2
             {
 
                 Console.WriteLine("Please enter a circle radius: ");
-                // radius = EnterDoubleValue();
+                
 				Circle circle2 = new Circle(EnterDoubleValue());
                 Console.WriteLine("Please enter a square side: ");
-				// side = EnterDoubleValue();
+				
 				Square square2 = new Square(EnterDoubleValue());
 
 
@@ -65,13 +65,13 @@ namespace Task1_2
                 {
                     if (circle2.Radius <= (square2.Side / 2))
                     {
-                        Console.WriteLine("Yep");
+                        Console.WriteLine("Yep, the circle can fit into the square");
 						Console.Read();
 
 					}
 					else
                     {
-                        Console.WriteLine("Nope");
+                        Console.WriteLine("Nope,the circle can't fit into the square");
 						Console.Read();
 
 					}
@@ -80,13 +80,13 @@ namespace Task1_2
                 {
 					if (circle2.Radius >= (square2.Side / Math.Sqrt(2)))
                     {
-                        Console.WriteLine("Yep");
+                        Console.WriteLine("Yep,the square can fit into the circle");
 						Console.Read();
 
 					}
 					else
                     {
-                        Console.WriteLine("Nope");
+                        Console.WriteLine("Nope,the square can't fit into the circle");
 						Console.Read();
 
 					}
