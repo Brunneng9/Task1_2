@@ -25,7 +25,7 @@ namespace Task1_2
             if (condition == 1)
             {
                 Console.WriteLine("Please enter a circle radius: ");
-                // radius = EnterDoubleValue();
+                
 				Circle circle1 = new Circle(EnterDoubleValue());
                 Console.WriteLine("Circle area is " + circle1.GetCircleArea());
 				Console.Read();
